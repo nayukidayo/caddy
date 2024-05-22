@@ -15,6 +15,7 @@ FROM scratch
 WORKDIR /
 
 COPY --from=builder /app/bin .
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 ENV XDG_DATA_HOME /data
 ENV XDG_CONFIG_HOME /config
